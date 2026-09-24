@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<section class="page-shell narrow">
+  <a class="back" href="{{ '/colunas/' | relative_url }}">← Voltar às colunas</a>
+  <p class="eyebrow">Coluna publicada</p>
+  <h1>{{ page.title }}</h1>
+  <p class="byline">Bruno Olivatto{% if page.data_publicacao %} · {{ page.data_publicacao | date: "%d/%m/%Y" }}{% endif %}{% if page.veiculo %} · {{ page.veiculo }}{% endif %}</p>
+  <div class="tag-row">{% for tema in page.temas %}<a class="tag" href="{{ '/temas/' | relative_url }}#{{ tema | slugify }}">{{ tema }}</a>{% endfor %}</div>
+  {% if page.url_original %}<p class="original-link"><a href="{{ page.url_original }}" target="_blank" rel="noopener">Ver publicação original ↗</a></p>{% endif %}
+  <article class="prose article-body">{{ content }}</article>
+  {% if page.relacionadas %}
+  <aside class="related"><h2>Ouça também</h2>{% for n in page.relacionadas %}{% assign p = site.pilulas | where: "numero", n | first %}{% if p %}<p><a href="{{ p.url | relative_url }}">▶ {{ p.title }}</a></p>{% endif %}{% endfor %}</aside>
+  {% endif %}
+</section>

@@ -1,46 +1,40 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pílulas Reflexivas, de Bruno Olivatto: acervo público de reflexões sonoras sobre Educação, Cultura, Tecnologias, Saúde, Economia e vida contemporânea.">
-<title>Pílulas Reflexivas — Bruno Olivatto</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="topbar">
-  <a class="brand" href="#inicio">Pílulas Reflexivas</a>
-  <nav><a href="#acervo">Acervo</a><a href="#projeto">Projeto</a><a href="#autor">Bruno Olivatto</a></nav>
-</header>
-<main>
-<section class="hero" id="inicio">
-  <div class="hero-copy">
-    <p class="eyebrow">Repertório sonoro • 2026</p>
-    <h1>Pílulas Reflexivas</h1>
-    <p class="lead">Reflexões sonoras de <strong>Bruno Olivatto</strong> sobre Educação, Cultura, Tecnologias, Saúde, Economia e vida contemporânea.</p>
-    <div class="hero-actions"><a class="button" href="#acervo">Explorar o acervo</a><a class="button ghost" href="#projeto">Conhecer o projeto</a></div>
-    <p class="meta"><span id="totalHero"></span> gravações disponíveis gratuitamente.</p>
+---
+layout: default
+title: Início
+---
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Repertório multimídia · desde 2026</p>
+      <h1>Pílulas Reflexivas</h1>
+      <p class="lead">Reflexões sonoras e textos de <strong>Bruno Olivatto</strong> sobre Educação, Cultura, Tecnologias, Saúde, Economia e vida contemporânea.</p>
+      <div class="actions"><a class="button" href="{{ '/pilulas/' | relative_url }}">Ouvir pílulas</a><a class="button ghost" href="{{ '/colunas/' | relative_url }}">Ler colunas</a></div>
+      <p class="hero-meta">{{ site.pilulas | size }} gravações no acervo.</p>
+    </div>
+    <figure class="portrait"><img src="{{ '/img/bruno-olivatto.jpeg' | relative_url }}" alt="Prof. Dr. Bruno Olivatto em atividade pública, segurando um microfone."><figcaption>Prof. Dr. Bruno Olivatto</figcaption></figure>
   </div>
-  <figure class="portrait"><img src="img/bruno-olivatto.jpeg" alt="Prof. Dr. Bruno Olivatto em atividade pública, segurando um microfone."><figcaption>Prof. Dr. Bruno Olivatto</figcaption></figure>
 </section>
-<section class="intro" id="projeto">
+
+<section class="wrap section">
+  <div class="section-head"><div><p class="eyebrow">Pílulas reflexivas</p><h2>Áudios mais recentes</h2></div><a href="{{ '/pilulas/' | relative_url }}">Ver todo o acervo →</a></div>
+  <div class="cards compact">
+    {% assign recentes = site.pilulas | sort: "numero" | reverse %}
+    {% for p in recentes limit:6 %}
+    <article class="card"><p class="card-kicker">#{{ p.numero }} · {{ p.duracao }}</p><h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3><div class="tag-row">{% for tema in p.macrotemas limit:2 %}<span class="tag">{{ tema }}</span>{% endfor %}</div></article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap section">
+    <div class="section-head"><div><p class="eyebrow">Colunas publicadas</p><h2>Textos, análise e intervenção pública</h2></div><a href="{{ '/colunas/' | relative_url }}">Ver todas →</a></div>
+    {% if site.colunas.size > 0 %}
+    <div class="cards compact">{% assign cols = site.colunas | sort: "data_publicacao" | reverse %}{% for c in cols limit:3 %}<article class="card"><p class="card-kicker">{% if c.data_publicacao %}{{ c.data_publicacao | date: "%d/%m/%Y" }}{% endif %}{% if c.veiculo %} · {{ c.veiculo }}{% endif %}</p><h3><a href="{{ c.url | relative_url }}">{{ c.title }}</a></h3><p>{{ c.resumo }}</p></article>{% endfor %}</div>
+    {% else %}<div class="empty-state">Esta seção está pronta para receber as colunas de Bruno Olivatto. Use o arquivo <code>modelos/MODELO-NOVA-COLUNA.md</code> para publicar o primeiro texto.</div>{% endif %}
+  </div>
+</section>
+
+<section class="wrap section split">
   <div><p class="eyebrow">Sobre o projeto</p><h2>Saberes da experiência em circulação</h2></div>
-  <div class="prose"><p>As <strong>Pílulas Reflexivas</strong> foram gravadas ao longo de 2026 como parte de um projeto gratuito de compartilhamento de saberes da experiência desenvolvido pelo Prof. Dr. Bruno Olivatto. As gravações circularam originalmente em grupos de WhatsApp e são compartilhadas semanalmente com uma comunidade que atualmente reúne cerca de 2.000 participantes em dez grupos.</p><p>Este acervo público organiza essas intervenções sonoras de modo contextualizado e pesquisável, preservando sua vocação original: provocar reflexão, aproximar conhecimentos e colocar em diálogo temas da educação, cultura, tecnologias, saúde, economia e sociedade.</p></div>
+  <div class="prose"><p>As <strong>Pílulas Reflexivas</strong> foram iniciadas em 2026 como um projeto gratuito de compartilhamento de saberes da experiência. As gravações circulam semanalmente em dez grupos de WhatsApp, alcançando em torno de 2.000 pessoas a cada registro compartilhado.</p><p>Esta versão do site amplia o projeto: reúne o repertório sonoro, acolhe as colunas publicadas e permite explorar a produção de Bruno Olivatto por temas e conexões.</p><p><a href="{{ '/sobre/' | relative_url }}">Conheça o projeto →</a></p></div>
 </section>
-<section class="collection" id="acervo">
-  <div class="section-head"><div><p class="eyebrow">Acervo</p><h2>Ouça, pesquise e explore por tema</h2></div><div class="count"><strong id="total"></strong><span>pílulas</span></div></div>
-  <div class="tools">
-    <label class="search"><span>Buscar</span><input id="search" type="search" placeholder="Título, tema, conceito…" autocomplete="off"></label>
-    <div id="filters" class="filters" aria-label="Filtros por macrotema"></div>
-  </div>
-  <div id="resultsInfo" class="results-info"></div>
-  <div id="cards" class="cards"></div>
-</section>
-<section class="author" id="autor">
-  <figure><img src="img/bruno-olivatto.jpeg" alt="Prof. Dr. Bruno Olivatto."></figure>
-  <div><p class="eyebrow">Autor</p><h2>Prof. Dr. Bruno Olivatto</h2><p>Pedagogo e doutor em Educação pela Universidade Federal da Bahia (UFBA), é docente do Programa de Formação Avançada em Saúde Coletiva, com concentração em Saúde Digital, do Instituto de Saúde Coletiva da UFBA (ISC-UFBA). Foi diretor do Centro de Estudos e Assessoria Pedagógica (CEAP), organização não governamental vinculada à tradição jesuíta e dedicada à formação educacional e ao fortalecimento da escola pública.</p><p>Atualmente, integra a Coordenação de Formação e Tecnologias da Política de Educação Integral e de Tempo Integral do Ministério da Educação (MEC), desenvolvida sob liderança da Faculdade de Educação da UFBA. Sua trajetória articula educação, currículo, formação, cibercultura, tecnologias digitais e saúde coletiva.</p><p>Também atua como podcaster e produtor audiovisual, desenvolvendo conteúdos em áudio e outras linguagens midiáticas voltados à educação, ao currículo e à formação, explorando as possibilidades pedagógicas, culturais e comunicacionais das mídias digitais. É colunista de Educação e Cultura de portal digital da Bahia. Antes da vida acadêmica, foi jogador profissional de futebol.</p></div>
-</section>
-</main>
-<footer><div><strong>Pílulas Reflexivas</strong><br>Bruno Olivatto</div><div>Acervo gratuito • 2026</div></footer>
-<script src="catalogo.js"></script><script src="script.js"></script>
-</body></html>

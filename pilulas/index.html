@@ -1,0 +1,21 @@
+---
+layout: default
+title: Pílulas Reflexivas
+---
+<section class="page-shell">
+  <p class="eyebrow">Acervo sonoro</p><h1>Pílulas Reflexivas</h1>
+  <p class="lead small">Busque por título, tema ou descritor. Novas gravações podem ser acrescentadas continuamente sem alterar o código do site.</p>
+  <div class="tools"><label class="search">Buscar<input id="search" type="search" placeholder="Título, tema, conceito…" autocomplete="off"></label><div class="filters" id="filters"><button class="filter active" data-filter="todos">Todos</button>{% assign temas = "Educação,Cultura,Tecnologias,Saúde,Economia" | split: "," %}{% for t in temas %}<button class="filter" data-filter="{{ t | downcase }}">{{ t }}</button>{% endfor %}</div></div>
+  <p id="resultsInfo" class="results-info"></p>
+  <div class="cards" id="pilulaCards">
+    {% assign itens = site.pilulas | sort: "numero" %}
+    {% for p in itens %}
+    <article class="card searchable" data-search="{{ p.title | downcase }} {{ p.macrotemas | join: ' ' | downcase }} {{ p.descritores | join: ' ' | downcase }}" data-temas="{{ p.macrotemas | join: '|' | downcase }}">
+      <p class="card-kicker">#{{ p.numero }} · {{ p.duracao }}</p><h2><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h2>
+      <div class="tag-row">{% for tema in p.macrotemas %}<span class="tag">{{ tema }}</span>{% endfor %}{% for d in p.descritores %}<span class="tag secondary">{{ d }}</span>{% endfor %}</div>
+      <p>{{ p.content | strip_html | truncatewords: 28 }}</p>
+      <audio controls preload="none" src="{{ p.audio | relative_url }}"></audio>
+    </article>
+    {% endfor %}
+  </div>
+</section>

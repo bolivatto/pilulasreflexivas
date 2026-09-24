@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<section class="page-shell narrow">
+  <a class="back" href="{{ '/pilulas/' | relative_url }}">← Voltar ao acervo</a>
+  <p class="eyebrow">Pílula reflexiva {% if page.numero %}#{{ page.numero }}{% endif %}</p>
+  <h1>{{ page.title }}</h1>
+  <p class="byline">Prof. Dr. Bruno Olivatto · {{ page.ano }}{% if page.duracao %} · {{ page.duracao }}{% endif %}</p>
+
+  <div class="tag-row">
+    {% for tema in page.macrotemas %}<a class="tag" href="{{ '/temas/' | relative_url }}#{{ tema | slugify }}">{{ tema }}</a>{% endfor %}
+    {% for d in page.descritores %}<span class="tag secondary">{{ d }}</span>{% endfor %}
+  </div>
+
+  <div class="audio-box">
+    <audio controls preload="metadata" src="{{ page.audio | relative_url }}">Seu navegador não suporta reprodução de áudio.</audio>
+  </div>
+
+  <article class="prose article-body">{{ content }}</article>
+
+  {% if page.transcricao %}
+  <p><a class="button ghost" href="{{ page.transcricao | relative_url }}">Ler transcrição</a></p>
+  {% endif %}
+</section>

@@ -1,0 +1,29 @@
+title: "Pílulas Reflexivas"
+description: "Repertório público de reflexões sonoras e textos de Bruno Olivatto."
+lang: pt-BR
+baseurl: "/pilulasreflexivas"
+markdown: kramdown
+permalink: pretty
+collections:
+  pilulas:
+    output: true
+    permalink: /pilulas/:name/
+  colunas:
+    output: true
+    permalink: /colunas/:name/
+defaults:
+  - scope:
+      path: ""
+      type: pilulas
+    values:
+      layout: pilula
+  - scope:
+      path: ""
+      type: colunas
+    values:
+      layout: coluna
+exclude:
+  - modelos
+  - dados-pilulas.csv
+  - README.md
+  - ATUALIZACAO.md

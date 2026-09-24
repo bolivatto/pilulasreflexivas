@@ -1,0 +1,12 @@
+---
+layout: default
+title: Temas
+---
+<section class="page-shell">
+  <p class="eyebrow">Navegação temática</p><h1>Temas</h1>
+  <p class="lead small">Explore, em conjunto, pílulas e colunas relacionadas aos cinco grandes eixos do projeto.</p>
+  {% assign temas = "Educação,Cultura,Tecnologias,Saúde,Economia" | split: "," %}
+  {% for tema in temas %}
+  <section class="theme-block" id="{{ tema | slugify }}"><h2>{{ tema }}</h2><div class="theme-grid"><div><h3>Pílulas</h3>{% assign encontrou = false %}{% assign itens = site.pilulas | sort: "numero" %}{% for p in itens %}{% if p.macrotemas contains tema %}{% assign encontrou = true %}<p><a href="{{ p.url | relative_url }}">#{{ p.numero }} — {{ p.title }}</a></p>{% endif %}{% endfor %}{% unless encontrou %}<p class="muted">Nenhuma pílula.</p>{% endunless %}</div><div><h3>Colunas</h3>{% assign encontrou_col = false %}{% for c in site.colunas %}{% if c.temas contains tema %}{% assign encontrou_col = true %}<p><a href="{{ c.url | relative_url }}">{{ c.title }}</a></p>{% endif %}{% endfor %}{% unless encontrou_col %}<p class="muted">Nenhuma coluna publicada ainda.</p>{% endunless %}</div></div></section>
+  {% endfor %}
+</section>
