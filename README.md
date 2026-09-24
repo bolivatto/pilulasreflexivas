@@ -24,3 +24,8 @@ O GitHub Pages deverá estar configurado para publicar a branch `main` a partir 
 ## Endereço do repositório
 
 A configuração atual usa `baseurl: "/pilulasreflexivas"`, correspondente ao nome do repositório mostrado no GitHub Desktop. Se o repositório for renomeado ou se você passar a usar domínio próprio, ajuste esse campo em `_config.yml`.
+
+
+## Colunas incorporadas
+
+A versão atual inclui 8 colunas em `_colunas/` e os respectivos PDFs em `pdf/colunas/`. Quando a data ou o veículo de publicação não estavam explicitamente informados nos PDFs recebidos, esses campos foram deixados em branco para evitar inferências editoriais.
