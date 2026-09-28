@@ -5,7 +5,7 @@ titulo: "Um tributo ao jornalismo lento"
 autor: "Bruno Olivatto"
 ano: 2026
 veiculo: "Bahia em Tempo Real"
-link_original: "https://bahiaemtemporeal.com.br/um-tributo-ao-jornalismo-lento/"
+url original: "https://bahiaemtemporeal.com.br/um-tributo-ao-jornalismo-lento/"
 pdf: "/pdf/colunas/01-um-tributo-ao-jornalismo-lento.pdf"
 resumo: "..."
 temas:
