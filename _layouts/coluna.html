@@ -13,3 +13,11 @@ layout: default
   <aside class="related"><h2>Ouça também</h2>{% for n in page.relacionadas %}{% assign p = site.pilulas | where: "numero", n | first %}{% if p %}<p><a href="{{ p.url | relative_url }}">▶ {{ p.title }}</a></p>{% endif %}{% endfor %}</aside>
   {% endif %}
 </section>
+
+{% if page.link_original %}
+  <p class="link-original">
+    <a href="{{ page.link_original }}" target="_blank" rel="noopener">
+      Ver publicação original ↗
+    </a>
+  </p>
+{% endif %}
