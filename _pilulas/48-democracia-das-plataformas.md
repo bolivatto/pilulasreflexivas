@@ -2,7 +2,7 @@
 layout: pilula
 title: "A 'democracia' das plataformas"
 numero: 48
-numero_original: 48
+numero_original: 49
 autor: "Prof. Dr. Bruno Olivatto"
 ano: 2026
 duracao: "16:27"
