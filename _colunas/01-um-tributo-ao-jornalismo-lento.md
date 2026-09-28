@@ -1,11 +1,13 @@
 ---
 layout: coluna
 ordem: 1
-title: "Um tributo ao jornalismo lento"
+titulo: "Um tributo ao jornalismo lento"
 autor: "Bruno Olivatto"
 ano: 2026
+veiculo: "Bahia em Tempo Real"
+link_original: "https://bahiaemtemporeal.com.br/um-tributo-ao-jornalismo-lento/"
 pdf: "/pdf/colunas/01-um-tributo-ao-jornalismo-lento.pdf"
-resumo: "Uma defesa do jornalismo de profundidade e da lentidão como condições para reflexão, aprendizagem e debate público em uma cultura marcada pela aceleração informacional."
+resumo: "..."
 temas:
   - "Educação"
   - "Cultura"
