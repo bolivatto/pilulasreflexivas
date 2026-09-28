@@ -1,6 +1,6 @@
 ---
 layout: pilula
-title: "A existência algorítmica!"
+title: "A 'democracia' das plataformas"
 numero: 48
 numero_original: 48
 autor: "Prof. Dr. Bruno Olivatto"
