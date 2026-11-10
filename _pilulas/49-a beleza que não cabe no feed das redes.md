@@ -1,6 +1,6 @@
 ---
 layout: pilula
-title: "A Beleza nao Cabe no Feed das Redes"
+title: "A beleza nao cabe no feed das redes"
 numero: 49
 numero_original: 49
 autor: "Prof. Dr. Bruno Olivatto"
