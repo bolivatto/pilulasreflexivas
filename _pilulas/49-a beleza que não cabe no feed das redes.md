@@ -1,7 +1,7 @@
 ---
 layout: pilula
 title: "A Beleza nao Cabe no Feed das Redes"
-numero: 48
+numero: 49
 numero_original: 49
 autor: "Prof. Dr. Bruno Olivatto"
 ano: 2026
