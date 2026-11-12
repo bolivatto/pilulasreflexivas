@@ -6,7 +6,6 @@ autor: "Bruno Olivatto"
 ano: 2026
 veiculo: "Portal Bahia em Tempo Real"
 url_original: "https://bahiaemtemporeal.com.br/a-ia-e-so-mais-uma-tecnologia-talvez-esse-seja-justamente-o-nosso-maior-engano/"
-
 resumo: "Um argumento de que a inteligência artificial difere estruturalmente de mídias anteriores por atuar como agente cognitivo, automatizar tarefas intelectuais e alterar a ecologia informacional em velocidade e escala inéditas."
 temas:
   - "Tecnologias"
