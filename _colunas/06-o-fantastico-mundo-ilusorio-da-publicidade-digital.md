@@ -13,5 +13,5 @@ temas:
   - "Cultura"
   - "Publicidade Digital"
 ---
-Texto publicado originalmente no Portal Bahia em Tempo Real.
+Texto publicado originalmente no Portal Bahia em Tempo Real, de Salvador-Ba. 
 Acesse a publicação integral pelo link acima.
