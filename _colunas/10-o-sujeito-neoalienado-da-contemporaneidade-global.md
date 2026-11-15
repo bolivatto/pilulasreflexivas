@@ -1,7 +1,7 @@
 ---
 layout: coluna
 ordem: 10
-title: "O Sujeito Alienado da Contemporaneidade Global"
+title: "O Sujeito Neoalienado da Contemporaneidade Global"
 veiculo: "Portal Bahia em Tempo Real"
 url_original: "https://bahiaemtemporeal.com.br/o-sujeito-neoalienado-da-contemporaneidade-global/"
 autor: "Bruno Olivatto"
