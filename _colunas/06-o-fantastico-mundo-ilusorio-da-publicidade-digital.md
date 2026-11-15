@@ -1,17 +1,17 @@
 ---
 layout: coluna
 ordem: 6
-title: "O fantástico mundo ilusório da publicidade digital"
+titulo: "O Fantástico Mundo Ilusório da Publicidade Digital"
 autor: "Bruno Olivatto"
 ano: 2026
 veiculo: "Portal Bahia em Tempo Real"
-url_original: “https://bahiaemtemporeal.com.br/o-fantastico-mundo-ilusorio-da-publicidade-digital/
-resumo: "Uma reflexão sobre publicidade digital, economia da atenção, influenciadores, plataformas e extração de valor a partir do tempo, dos dados e do engajamento dos usuários."
+url_original: https://bahiaemtemporeal.com.br/o-fantastico-mundo-ilusorio-da-publicidade-digital/
+resumo: "Reflexão crítica sobre a publicidade digital, a economia da atenção e a transformação do tempo, dos dados e das interações em valor econômico nas plataformas digitais."
 temas:
-  - "Cultura"
   - "Tecnologias"
   - "Economia"
-relacionadas:
-  - 37
-  - 44
+  - "Cultura"
+  - "Publicidade Digital"
 ---
+Texto publicado originalmente no Portal Bahia em Tempo Real.
+Acesse a publicação integral pelo link acima.
